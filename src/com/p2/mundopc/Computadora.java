@@ -3,7 +3,7 @@ package com.p2.mundopc;
 
 public class Computadora {
 
-    private int idComputadora;
+    private static int idComputadora;
     private String nombre;
     private Monitor monitor;
     private Teclado teclado;
@@ -23,7 +23,7 @@ public class Computadora {
     }
 
     public int getIdComputadora() {
-        return idComputadora;
+        return ++idComputadora;
     }
 
     public void setIdComputadora(int idComputadora) {
@@ -72,7 +72,7 @@ public class Computadora {
 
     @Override
     public String toString() {
-        return "Computadora: " + nombre +"\n\tPrecio Unitario: "+precio+"\n\tMonitor: "+monitor+"\n\tTeclado: "+teclado+"\n\tRatón: "+raton;      
+        return "Computadora "+getIdComputadora()+": " + nombre +"\n\tPrecio Unitario: "+precio+"\n\tMonitor: "+monitor+"\n\tTeclado: "+teclado+"\n\tRatón: "+raton;      
     }
 
 }
