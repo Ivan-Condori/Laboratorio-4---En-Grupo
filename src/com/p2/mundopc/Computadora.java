@@ -1,33 +1,28 @@
 package com.p2.mundopc;
 
-
 public class Computadora {
 
-    private static int idComputadora;
+    private int idComputadora;
+    private static int contadorComputadora;
     private String nombre;
     private Monitor monitor;
     private Teclado teclado;
     private Raton raton;
+    private Parlante parlante;
     private double precio;
 
     private Computadora() {
-
+        this.idComputadora = ++contadorComputadora;
     }
 
-    public Computadora(String nombre, Monitor monitor, Teclado teclado,Raton raton, double precio) {
+    public Computadora(String nombre, Monitor monitor, Teclado teclado, Raton raton, Parlante parlante, double precio) {
+        this();
         this.nombre = nombre;
         this.monitor = monitor;
         this.teclado = teclado;
         this.raton = raton;
+        this.parlante = parlante;
         this.precio = precio;
-    }
-
-    public int getIdComputadora() {
-        return ++idComputadora;
-    }
-
-    public void setIdComputadora(int idComputadora) {
-        this.idComputadora = idComputadora;
     }
 
     public String getNombre() {
@@ -70,9 +65,17 @@ public class Computadora {
         this.precio = precio;
     }
 
+    public Parlante getParlante() {
+        return parlante;
+    }
+
+    public void setParlante(Parlante parlante) {
+        this.parlante = parlante;
+    }
+
     @Override
     public String toString() {
-        return "Computadora "+getIdComputadora()+": " + nombre +"\n\tPrecio Unitario: "+precio+"\n\tMonitor: "+monitor+"\n\tTeclado: "+teclado+"\n\tRatón: "+raton;      
+        return "Computadora "+idComputadora+": " + nombre +"\n\tPrecio Unitario: "+precio+"\n\t"+monitor+"\n\t"+teclado+"\n\t"+raton+"\n\t"+parlante;      
     }
 
 }

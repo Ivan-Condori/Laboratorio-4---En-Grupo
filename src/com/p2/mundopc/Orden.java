@@ -1,7 +1,5 @@
 package com.p2.mundopc;
-
 public class Orden {
-
     private final int idOrden;
     private final Computadora[] computadoras;
     private static int contadorOrdenes;
@@ -14,12 +12,14 @@ public class Orden {
     }
 
     public void agregarComputadora(Computadora computadora) {
+        
         if (contadorComputadoras < MAX_COMPUTADORAS) {
 
             computadoras[contadorComputadoras++] = computadora;
 
-        } else {
-            System.out.println("Se ha superado el máximo de "
+        } 
+        else {
+            System.out.println("La orden "+ idOrden+ " ha superado el máximo de "
                     + "productos: " + MAX_COMPUTADORAS);
         }
     }
@@ -33,9 +33,9 @@ public class Orden {
     }
 
     public void mostrarOrden() {
-        System.out.println("Orden #:" + idOrden);
-        System.out.println("Total de la orden #" + idOrden
-                + ":$ " + calcularTotal());
+        System.out.println("\nOrden #:" + idOrden);
+        System.out.println("Total de la orden #" 
+          + idOrden+ ":$ " + calcularTotal());
         System.out.println("Productos de la orden #"
                 + idOrden + ":");
         for (int i = 0; i < contadorComputadoras; i++) {
